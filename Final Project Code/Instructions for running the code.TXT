@@ -1,0 +1,51 @@
+It does not matter which folder is executed first/if all or only one is executed because all of the .csv files needed for each part of the code are included within the folders
+
+Each folder corresponds to a defferent part of the project, including: 
+
+1. GoogleBooksAPI - used to get modern book data from Google Books API
+2. Modelling - the LDA, SOM and Kmeans modelling (with all of the preprocessing) for modern and Classical books
+3. Recommendation System - the final recommendation system that produces classical book recommendations 
+4. Shiny - the R Shiny User Interface
+
+How to run the code? The method varies from folder to folder, I'll be outlining below the general methods.
+
+GoogleBooksAPI folder: 
+1. it's a '.ipynb' file which is a Google Colab file
+2. after downloading 'BookInfo.ipynb', import it to Google Colab
+3. Run the code in Google Collab
+4. After running the code, there will be a field to enter an ISBN number, which is what is used to get the book data
+5. Some books have many different ISBN numbers, if the first one doesn't work then re-run the code and try a different one
+6. the output (title, author, summary) of the accepted ISBN books will be saved into a 'books.csv' file 
+
+
+
+Modelling folder:
+1. The folder includes 2 sub-folders: one for modern books the other one for classical books; the method for running them is the same
+2. Download the target sub-folder with all of the .csv files within
+3. import the '.ipynb' file into Google Colab
+4. the code can be then run in either Google Colab or copy-pasted into RStudio and executed there
+5. If the code is run in Google Colab, the .csv files within the folder will need to be uploaded to the Google Colab (the folder icon on the right side)
+6. If the code is run in RStudio, you'll need to set working directory ( setwd(" ") put the working directory as the folder in which the .csv files are contained)
+7. Run the code, there should be no errors
+
+For the classical books folder specifically:
+There are less .csv files than in modern books folder because the classical book data is gained through the code (through the gutenbergr package)
+
+
+
+Recommendation System folder:
+1. the code is, in general, the same as with the UI (Shiny folder)
+2. the code is in '.ipynb' format, it should be uploaded to Google Colab for access
+3. the code can be then run in either Google Colab or copy-pasted into RStudio and executed there
+4. If the code is run in Google Colab, the .csv files within the folder will need to be uploaded to the Google Colab (the folder icon on the right side)
+5. If the code is run in RStudio, you'll need to set working directory ( setwd(" ") put the working directory as the folder in which the .csv files are contained)
+6. Run the code, there should be no errors
+
+
+
+Shiny folder:
+1. Download the whole folder
+2. open the 3 R files in RStudio
+3. Make sure that the Shiny package (and all the packages listed at the top of server.r file) are installed
+4. At the top right corner click 'Run App' on either of the 3 files, after which the UI will open
+5. All the CSV files needed for the code to execute are contained within the Shiny folder already
